@@ -1,10 +1,14 @@
 import React from 'react'
+import AddTodo from './components/AddTodo'
+import Todos from './components/Todos'
 
 const App = () => {
   return (
-   <>
-   <div className='text-3xl'>Hellllllo</div>
-   </>
+    <>
+<div>Hello </div>    
+<AddTodo/>
+<Todos/>
+    </>
   )
 }
 
