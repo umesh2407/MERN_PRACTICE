@@ -1,13 +1,16 @@
 import React from 'react'
-import AddTodo from './components/AddTodo'
-import Todos from './components/Todos'
+import Header from './components/Header'
+import Body from './components/Body'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
     <>
-<div>Hello </div>    
-<AddTodo/>
-<Todos/>
+    <div className='bg-black text-white w-full h-full'>
+<Header/>
+<Body/>
+<Footer/>
+</div>
     </>
   )
 }
