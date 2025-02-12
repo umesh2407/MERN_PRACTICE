@@ -20,7 +20,7 @@ const Body = () => {
 
   return (
     <div>
-      <div className="flex gap-10  mt-5 mb-5 m-5">
+      <div className="flex gap-10">
         <div>
           <input
             className="border border-black rounded-lg p-1 px-8 bg-slate-900 text-white items-center"
