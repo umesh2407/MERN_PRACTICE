@@ -5,6 +5,7 @@ import AboutUs from "./pages/AboutUs";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ResturantMenu from "./pages/ResturantMenu";
+import ContactUs from "./pages/ContactUs";
 
 const Layout = () => {
   return (
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <Home /> },
       { path: "aboutus", element: <AboutUs /> },
+      {path:"contact", element:<ContactUs/>},
       { path: "restuarants/:resId", element: <ResturantMenu/> },
 
     ],
