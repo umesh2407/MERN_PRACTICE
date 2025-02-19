@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const ResturantCard = ({ resObj }) => {
   const { name, cuisine, rating, opening_hours } = resObj;
   return (
