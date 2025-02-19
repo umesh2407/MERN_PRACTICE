@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ResturantMenu from "./pages/ResturantMenu";
 import ContactUs from "./pages/ContactUs";
+import TabForm from "./pages/TabForm";
 
 const Layout = () => {
   return (
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       { path: "", element: <Home /> },
       { path: "aboutus", element: <AboutUs /> },
       {path:"contact", element:<ContactUs/>},
+      {path:"form", element:<TabForm/>},
       { path: "restuarants/:resId", element: <ResturantMenu/> },
 
     ],
