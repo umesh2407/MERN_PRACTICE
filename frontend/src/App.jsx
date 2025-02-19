@@ -28,7 +28,6 @@ const router = createBrowserRouter([
       {path:"contact", element:<ContactUs/>},
       {path:"form", element:<TabForm/>},
       { path: "restuarant/:resId", element: <ResturantMenu/> },
-
     ],
   },
 ]);
