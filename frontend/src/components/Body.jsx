@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ResturantCard from "./ResturantCard";
 import {resList} from "../utils/mockData";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [reslist, setReslist] = useState(resList);
@@ -19,6 +20,16 @@ const Body = () => {
     setFilteredRestlist(filterdList);
   };
 
+
+  const onlineStatus = useOnlineStatus();
+  if (!onlineStatus) {
+    return (
+      <div className="text-3xl">
+        Looks like You are Offline !! Please check your Internet connection ..
+      </div>
+    );
+  }
+  
   return (
     <div>
       <div className="flex gap-10">
