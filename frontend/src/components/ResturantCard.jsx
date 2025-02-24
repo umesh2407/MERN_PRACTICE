@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const ResturantCard = ({ resObj }) => {
   const { name, cuisine, rating, opening_hours } = resObj;
   return (
@@ -19,6 +18,20 @@ const ResturantCard = ({ resObj }) => {
       </div>
     </div>
   );
+};
+
+// HIGH ORDER COMPONENT (for promotion label)
+export const withPromotedLabel = (ResturantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-cyan-900 text-slate-100 rounded-lg p-2 m-1">
+          Promoted
+        </label>
+        <ResturantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default ResturantCard;

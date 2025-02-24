@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ResturantCard from "./ResturantCard";
-import {resList} from "../utils/mockData";
+import ResturantCard, { withPromotedLabel } from "./ResturantCard";
+import { resList } from "../utils/mockData";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
@@ -8,7 +8,7 @@ const Body = () => {
   const [reslist, setReslist] = useState(resList);
   const [filteredRestlist, setFilteredRestlist] = useState(reslist);
   const [inputsearch, setInputsearch] = useState("");
-
+  const ResturantCardPromoted = withPromotedLabel(ResturantCard);
 
   const topRated = () => {
     const filterdList = reslist.filter((rest) => rest.rating > 4.5);
@@ -16,10 +16,11 @@ const Body = () => {
   };
 
   const searchText = () => {
-    const filterdList = reslist.filter((rest) => rest.name.includes(inputsearch));
+    const filterdList = reslist.filter((rest) =>
+      rest.name.includes(inputsearch)
+    );
     setFilteredRestlist(filterdList);
   };
-
 
   const onlineStatus = useOnlineStatus();
   if (!onlineStatus) {
@@ -29,7 +30,7 @@ const Body = () => {
       </div>
     );
   }
-  
+
   return (
     <div>
       <div className="flex gap-10">
@@ -56,8 +57,12 @@ const Body = () => {
       </div>
       <div className="grid grid-cols-5 items-center ">
         {filteredRestlist.map((rest) => (
-         <Link to={`/restuarant/${rest.id}`}>
-          <ResturantCard key={rest.id} resObj={rest} />
+          <Link to={`/restuarant/${rest.id}`}>
+            {rest.promoted ? (
+              <ResturantCardPromoted key={rest.id} resObj={rest} />
+            ) : (
+              <ResturantCard key={rest.id} resObj={rest} />
+            )}
           </Link>
         ))}
       </div>
