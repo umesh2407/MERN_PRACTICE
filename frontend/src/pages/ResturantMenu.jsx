@@ -11,7 +11,7 @@ const ResturantMenu = () => {
   }
 
   return (
-    <div className="p-7 bg-slate-800 w-full h-[400px] items-center">
+    <div className="p-10 bg-slate-800 w-full h-[400px] items-center text-center">
       <h1 className="text-3xl text-slate-200 font-bold">{restaurant.name}</h1>
       <p className="text-slate-200">{restaurant.description}</p>
       <p className="text-slate-200">📍 {restaurant.address}</p>

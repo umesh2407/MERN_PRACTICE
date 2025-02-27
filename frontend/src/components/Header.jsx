@@ -15,7 +15,7 @@ const Header = () => {
            <Link to="/aboutus"> <li>About Us</li></Link>
            <Link to="/contact"> <li>Contact</li></Link>
            <Link to="/form"> <li>Tab Form</li></Link>
-            <li>Cart</li>
+           <div className="font-bold text-xl">Cart (0 items) </div>
           </ul>
         </div>
       </div>
